@@ -1,0 +1,54 @@
+{
+    "name": "PowerShell",
+    "image": "mcr.microsoft.com/powershell:latest",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "pwsh",
+                "terminal.integrated.fontFamily": "MesloLGM Nerd Font"
+            },
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "microsoft-dciborow.align-bicep",
+                "ms-azuretools.vscode-bicep",
+                "ms-vsliveshare.vsliveshare",
+                "ms-azuretools.vscode-azureresourcegroups",
+                "ms-vscode-remote.remote-containers"
+            ]
+        }
+    },
+    "onCreateCommand": "pwsh -File .devcontainer/install.ps1",
+    "postStartCommand": "",
+    "remoteEnv": {},
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {
+            "version": "latest",
+            "installBicep": true,
+            "extensions": [
+                "azure-devops"
+            ]
+        },
+        "ghcr.io/devcontainers/features/powershell:1": {
+            "modules": [
+                "Az.Accounts",
+                "Az.Resources",
+                "Az.KeyVault",
+                "Pester",
+                "PSReadLine",
+                "PSRule.Rules.Azure",
+                "Terminal-Icons"
+            ]
+        },
+        "ghcr.io/devcontainers-extra/features/prettier:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        // act to run github actions locally
+        "ghcr.io/devcontainers-extra/features/act-asdf:2": {},
+        // for act
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "username": "vscode"
+        },
+        "ghcr.io/devcontainers-extra/features/curl-apt-get:1": {},
+        "ghcr.io/jajera/features/zip:1": {}
+    }
+}
