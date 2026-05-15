@@ -1,0 +1,2 @@
+
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/wesleycamargo/dotfiles/refs/heads/main/install.ps1')) 
