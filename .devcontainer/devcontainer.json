@@ -25,7 +25,8 @@
             "version": "latest",
             "installBicep": true,
             "extensions": [
-                "azure-devops"
+                "azure-devops",
+                "resource-graph"
             ]
         },
         "ghcr.io/devcontainers/features/powershell:1": {
